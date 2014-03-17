@@ -74,7 +74,7 @@ There is none at the moment, just refer to the couchbase wiki page on [TAP Proto
 
 ## TODO
 
-* Handle Opaque, vBucket, Checkpoint responses
+* Handle vBucket, Checkpoint responses
 * vBucket related features testing
 * Write tests
 * Write documentation
