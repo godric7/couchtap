@@ -1,13 +1,13 @@
 {
   "name": "couchtap",
-  "version": "0.1.0",
+  "version": "0.1.3",
   "description": "Couchbase TAP Protocol for node.js",
   "homepage": "https://github.com/godric7/couchtap",
   "repository": {
     "type": "git",
     "url": "https://github.com/godric7/couchtap"
   },
-
+  "keywords": ["couchbase", "tap"],
   "main": "./index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -24,14 +24,47 @@ var wire = new tap.Client({
 });
 wire.on('connect', function() {
   wire.setMode({
-    backfill : -1,   // Require backfill for future events
+    backfill : -1,  // Require backfill for future events
     onlyKeys : true // Get only keys (the server might ignore this) 
   })
 })
-wire.on('mutation', function(meta, key, body) {
+wire.connect();
+```
+
+Or if you want the connection and mode setup to happen automagically:
+
+```js
+var tap  = require('couchtap')
+var wire = new tap.Client({
+  name:     'test1',
+  connect:  true,
+  host:     'vm-ubuntu',
+  bucket:   'test',
+  password: 'password',
+  mode:     {
+    dump : true, // Dump all documents
+  }
+});
+```
+
+Then listen to events :
+
+```js
+wire.on('mutation', function(meta, key, body, misc) {
   console.log('The document ', key, ' just changed');
 })
-wire.connect();
+
+wire.on('delete', function(meta, key, misc) {
+  console.log('The document ', key, ' was deleted');
+})
+
+wire.on('flush', function(misc) {
+  console.log('The bucket was flushed');
+})
+
+wire.on('opaque', function(flags, misc) {
+  console.log('Opaque frame with flags:', flags);
+})
 ```
 
 ## Documentation
