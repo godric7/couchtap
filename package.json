@@ -1,6 +1,6 @@
 {
   "name": "couchtap",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Couchbase TAP Protocol for node.js",
   "homepage": "https://github.com/godric7/couchtap",
   "repository": {
