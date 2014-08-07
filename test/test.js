@@ -9,7 +9,7 @@ var tap_opts = {
   modes   : {
     backfill: -1,
   }
-}
+};
 
 var con = new tap.Client(tap_opts);
 
@@ -18,10 +18,10 @@ con.on('connect', function() {
 });
 
 con.on('mutation', function (meta, key, body) {
-  console.log('-=-=-=-=-=-=-=-=[Data]-=-=-=-=-=-=-=-=')
+  console.log('-=-=-=-=-=-=-=-=[Data]-=-=-=-=-=-=-=-=');
   console.log('[test][data][meta]', meta);
   console.log('[test][data][key]', key);
   console.log('[test][data][body]', body);
-  console.log('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=')
-})
+  console.log('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
+});
 con.connect();
